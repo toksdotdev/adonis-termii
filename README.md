@@ -46,7 +46,7 @@ const sendSms = async () => {
     "talert",
     "+2348123456789",
     "This is the ship that made the Kessel Run in fourteen parsecs?",
-    { chanel: "whatsapp" }
+    { channel: "whatsapp" }
   );
 
   // Send generic text message
