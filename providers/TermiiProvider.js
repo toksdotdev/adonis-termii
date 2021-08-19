@@ -12,12 +12,14 @@ class TermiiProvider extends ServiceProvider {
    */
   register() {
     this.app.singleton('Adonis/Termii', () => {
-      const Config = this.app.use('Adonis/Src/Config')
+      const Config = this.app.use('Adonis/Src/Config');
 
-      const Termii = require('../src/')
-      const apiKey = Config.get('termii.apiKey')
-      const baseUrl = Config.get('termii.baseUrl')
-      return new Termii(baseUrl, apiKey)
+      const Termii = require('../src/');
+      const apiKey = Config.get('termii.apiKey');
+      const baseUrl = Config.get('termii.baseUrl');
+      const senderId = Config.get('termii.senderId');
+
+      return new Termii(baseUrl, apiKey, senderId);
     })
   }
 
